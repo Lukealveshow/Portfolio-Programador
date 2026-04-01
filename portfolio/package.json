@@ -2,12 +2,8 @@
   "name": "portfolio",
   "version": "0.0.0",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test",
-    "serve:ssr:portfolio": "node dist/portfolio/server/server.mjs"
+  "build:prod": "ng build --configuration production",
+  "build:stage": "ng build --configuration stage"
   },
   "private": true,
   "packageManager": "npm@10.9.4",
