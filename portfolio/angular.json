@@ -59,6 +59,9 @@
             },
             "development": {
               "buildTarget": "portfolio:build:development"
+            },
+            "stage": {
+              "buildTarget": "portfolio:build:stage"
             }
           },
           "defaultConfiguration": "development"
@@ -72,6 +75,33 @@
             "tsConfig": ["tsconfig.app.json", "tsconfig.spec.json"],
             "exclude": ["**/node_modules/**"]
           }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/portfolio/server",
+            "main": "src/main.server.ts",
+            "tsConfig": "tsconfig.server.json"
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ]
+            },
+            "stage": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.stage.ts"
+                }
+              ]
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }
