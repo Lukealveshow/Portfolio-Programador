@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-home',
@@ -18,6 +19,7 @@ export class HomeComponent {
   nome = "";
   email = "";
   mensagem = "";
+  env = environment;
 
   modalAberto: boolean = false;
 
@@ -37,7 +39,7 @@ export class HomeComponent {
       mensagem: this.mensagem
     };
 
-    this.http.post("http://localhost:5000/enviar-email", dados)
+    this.http.post(`${environment.apiUrl}/enviar-email`, dados)
     .subscribe(() => {
       alert("Email enviado com sucesso!");
       this.fecharModal();
@@ -45,4 +47,11 @@ export class HomeComponent {
 
   }
 
+  abrirLink(url: string) {
+    window.open(url, '_blank');
+  }
+
+  abrirWhatsApp(){
+    window.open(environment.whatsapp, '_blank');
+  }
 }
