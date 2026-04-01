@@ -19,12 +19,9 @@
           "options": {
             "main": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
-            "assets": [
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.css"
-            ]
+            "assets": ["src/assets"],
+            "styles": ["src/styles.css"],
+            "index": "src/index.html"
           },
           "configurations": {
             "production": {
@@ -37,7 +34,6 @@
               "outputHashing": "all",
               "outputPath": "dist/portfolio"
             },
-
             "stage": {
               "fileReplacements": [
                 {
@@ -47,7 +43,6 @@
               ],
               "outputPath": "dist/portfolio"
             },
-
             "development": {
               "optimization": false,
               "extractLicenses": false,
@@ -69,7 +64,14 @@
           "defaultConfiguration": "development"
         },
         "test": {
-          "builder": "@angular/build:unit-test"
+          "builder": "@angular-devkit/build-angular:karma"
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["tsconfig.app.json", "tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**"]
+          }
         }
       }
     }
