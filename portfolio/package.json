@@ -2,8 +2,8 @@
   "name": "portfolio",
   "version": "0.0.0",
   "scripts": {
-  "build:prod": "npx ng build --configuration production",
-  "build:stage": "npx ng build --configuration stage"
+    "build:prod": "npx ng build --configuration production",
+    "build:stage": "npx ng build --configuration stage"
   },
   "private": true,
   "packageManager": "npm@10.9.4",
@@ -21,6 +21,7 @@
     "tslib": "^2.3.0"
   },
   "devDependencies": {
+    "@angular-devkit/build-angular": "^21.2.6",
     "@angular/build": "^21.2.1",
     "@angular/cli": "^21.2.1",
     "@angular/compiler-cli": "^21.2.0",
