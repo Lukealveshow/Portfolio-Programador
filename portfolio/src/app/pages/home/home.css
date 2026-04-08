@@ -18,7 +18,7 @@ body{
   background:linear-gradient(135deg,#0f172a,#1e293b);
   color:white;
   text-align:center;
-  padding:120px 20px;
+  padding: 140px 20px 120px;
 }
 
 .hero-content{
@@ -264,4 +264,43 @@ body{
 
 .btn-codigo:active {
   transform: scale(0.98);
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(8px);
+}
+
+.nav-content {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+}
+
+.nav-links a {
+  margin-right: 20px;
+  color: #e2e8f0;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  transition: 0.2s;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background: #3b82f6;
+  transition: 0.3s;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
 }

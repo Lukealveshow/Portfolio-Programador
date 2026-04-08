@@ -1,0 +1,46 @@
+<nav class="navbar">
+  <div class="container nav-content">
+
+    <div class="nav-links">
+      <a routerLink="/">Home</a>
+      <a routerLink="/blog">Blog</a>
+    </div>
+  </div>
+</nav>
+
+<section class="blog-hero">
+  <div class="container">
+    <h1>Blog Técnico</h1>
+    <p>
+      Conteúdos sobre Desenvolvimento Web, APIs, inteligência Artificial
+      e Automação.
+    </p>
+  </div>
+</section>
+
+<section class="blog-list">
+
+  <div class="container">
+
+    <div class="grid">
+
+      <div class="card" *ngFor="let artigo of artigos">
+
+        <h2>{{artigo.title}}</h2>
+
+        <p>{{artigo.resumo}}</p>
+
+        <a
+          [routerLink]="['/artigo', artigo.slug]"
+          class="btn-primary"
+        >
+          Ler artigo
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
