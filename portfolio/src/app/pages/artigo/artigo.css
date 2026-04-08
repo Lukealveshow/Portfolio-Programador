@@ -1,31 +1,13 @@
-/* HERO DO ARTIGO */
-
 .artigo-hero {
-  background: linear-gradient(135deg, #0f172a, #1e293b);
+  background: linear-gradient(135deg,#0f172a,#1e293b);
   color: white;
-  padding: 140px 20px 80px;
+  padding: 130px 20px 70px;
   text-align: center;
 }
-
-.artigo-hero h1 {
-  font-size: 42px;
-  max-width: 800px;
-  margin: auto;
-  margin-bottom: 15px;
-}
-
-.artigo-hero .subtitle {
-  opacity: 0.8;
-  font-size: 16px;
-}
-
-/* CONTEÚDO */
 
 .artigo-content {
   padding: 60px 20px;
 }
-
-/* CAIXA CENTRAL (tipo Medium) */
 
 .content-box {
   max-width: 800px;
@@ -36,82 +18,13 @@
   box-shadow: 0 15px 40px rgba(0,0,0,0.08);
 }
 
-/* TEXTO */
-
 .content-box p {
   line-height: 1.8;
-  margin-bottom: 18px;
-  color: #334155;
-  font-size: 16px;
 }
-
-/* TÍTULOS */
-
-.content-box h2 {
-  margin-top: 30px;
-  margin-bottom: 15px;
-  font-size: 24px;
-  color: #0f172a;
-}
-
-/* LISTAS */
-
-.content-box ul {
-  padding-left: 20px;
-  margin-bottom: 20px;
-}
-
-.content-box li {
-  margin-bottom: 8px;
-}
-
-/* CÓDIGO */
 
 .content-box pre {
   background: #0f172a;
   color: #e2e8f0;
-  padding: 18px;
+  padding: 15px;
   border-radius: 10px;
-  overflow-x: auto;
-  margin: 20px 0;
-  font-size: 14px;
-}
-
-.navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  background: rgba(15, 23, 42, 0.85);
-  backdrop-filter: blur(8px);
-}
-
-.nav-content {
-  display: flex;
-  justify-content: space-between; 
-  align-items: center;
-}
-
-.nav-links a {
-  margin-right: 20px;
-  color: #e2e8f0;
-  text-decoration: none;
-  font-weight: 500;
-  position: relative;
-  transition: 0.2s;
-}
-
-.nav-links a::after {
-  content: "";
-  position: absolute;
-  width: 0%;
-  height: 2px;
-  bottom: -4px;
-  left: 0;
-  background: #3b82f6;
-  transition: 0.3s;
-}
-
-.nav-links a:hover::after {
-  width: 100%;
 }

@@ -1,27 +1,14 @@
-<nav class="navbar">
-  <div class="container nav-content">
-    <div class="nav-links">
-      <a routerLink="/">Home</a>
-      <a routerLink="/blog">Blog</a>
-    </div>
-  </div>
-</nav>
-
-<!-- HERO DO ARTIGO -->
 <section class="artigo-hero">
   <div class="container">
     <h1>{{artigo?.title}}</h1>
     <p class="subtitle">
-      Conteúdo técnico aprofundado sobre desenvolvimento e tecnologia.
+      Conteúdo técnico aprofundado sobre desenvolvimento.
     </p>
   </div>
 </section>
 
-<!-- CONTEÚDO -->
 <section class="artigo-content">
   <div class="container content-box">
-
     <div [innerHTML]="artigo?.content"></div>
-
   </div>
 </section>
