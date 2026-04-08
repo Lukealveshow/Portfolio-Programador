@@ -33,7 +33,7 @@ export class BlogComponent {
       resumo: 'Como usar ML para prever mercado financeiro.'
     },
     {
-      title: 'Análise de sentimentos com Python',
+      title: 'Análise de sentimentos',
       slug: 'analise-sentimentos-python',
       resumo: 'NLP aplicado em tempo real.'
     },

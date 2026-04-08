@@ -1,0 +1,30 @@
+.artigo-hero {
+  background: linear-gradient(135deg,#0f172a,#1e293b);
+  color: white;
+  padding: 130px 20px 70px;
+  text-align: center;
+}
+
+.artigo-content {
+  padding: 60px 20px;
+}
+
+.content-box {
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+}
+
+.content-box p {
+  line-height: 1.8;
+}
+
+.content-box pre {
+  background: #0f172a;
+  color: #e2e8f0;
+  padding: 15px;
+  border-radius: 10px;
+}
