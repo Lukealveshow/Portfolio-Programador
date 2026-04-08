@@ -2,9 +2,9 @@
   "name": "portfolio",
   "version": "0.0.0",
   "scripts": {
-    "build:prod": "npx ng build --configuration production && npx ng run portfolio:server:production",
-    "build:stage": "npx ng build --configuration stage && npx ng run portfolio:server:stage",
-    "start": "node dist/portfolio/server/main.js"
+    "build:prod": "npx ng build --configuration production",
+    "build:stage": "npx ng build --configuration stage",
+    "start": "npx ng serve"
   },
   "private": true,
   "packageManager": "npm@10.9.4",
