@@ -19,7 +19,7 @@
           "options": {
             "main": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
-            "assets": ["src/assets"],
+            "assets": ["src/assets", "src/_redirects"],
             "styles": ["src/styles.css", "node_modules/bootstrap-icons/font/bootstrap-icons.css"],
             "index": "src/index.html"
           },
@@ -41,7 +41,8 @@
                   "with": "src/environments/environment.stage.ts"
                 }
               ],
-              "outputPath": "dist/portfolio"
+              "outputPath": "dist/portfolio",
+              "outputHashing": "none"
             },
             "development": {
               "optimization": false,
