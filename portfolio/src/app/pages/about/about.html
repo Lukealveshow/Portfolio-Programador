@@ -1,0 +1,71 @@
+<section class="about-hero">
+  <div class="container">
+    <h1>Sobre Mim</h1>
+    <p>Descrição sobre o Programador e sua trajetória profissional</p>
+  </div>
+</section>
+
+<section class="about-content">
+  <div class="container about-grid">
+
+    <div class="about-photo">
+      <img src="/assets/profile.jpg" alt="Lucas Alves Martins">
+    </div>
+
+    <div class="about-text">
+      <p class="about-tag">Desenvolvedor de Software</p>
+      <h2>{{ profile.name }}</h2>
+
+      <div class="about-info">
+        <span>
+          <i [attr.class]="profile.icons.location"></i>
+          {{ profile.location }}
+        </span>
+        <span>
+          <i [attr.class]="profile.icons.age"></i>
+          {{ profile.age }}
+        </span>
+        <a [href]="'mailto:' + profile.email" class="about-link">
+          <i [attr.class]="profile.icons.email"></i>
+          {{ profile.email }}
+        </a>
+        <a [href]="profile.linkedin" target="_blank" class="about-link">
+          <i [attr.class]="profile.icons.linkedin"></i>
+          LinkedIn
+        </a>
+      </div>
+
+      <p>
+        Sou Engenheiro de Computação pela Universidade Vila Velha (UVV) e pós-graduado em
+        Inteligência Artificial e Machine Learning pela PUC Minas. Apaixonado por tecnologia
+        desde cedo, hoje trabalho desenvolvendo sistemas web, APIs escaláveis e soluções
+        com Inteligência Artificial.
+      </p>
+      <p>
+        Tenho 4 anos de experiência profissional, com passagens pela <strong>Rede Gazeta</strong>,
+        maior grupo de comunicação do Espírito Santo, onde desenvolvi sistemas webs em Angular e .NET,
+        APIs corporativas em Python, .NET e Javascript, modelagem, desenvolvimento de Banco de Dados
+        como MySQL, SQL Server e NoSQL MongoDB, sistemas de integração com RabbitMQ e projetos de
+        Machine Learning — incluindo um modelo de predição de audiência televisiva. Também atuei na
+        <strong>UCL College</strong> desenvolvendo sistemas acadêmicos utilizando Python com
+        framework web Django e Banco de Dados MySQL.
+      </p>
+      <p>
+        Fora do trabalho, gosto de acompanhar tendências de IA, estudar novos frameworks
+        e contribuir com projetos que resolvam problemas reais.
+      </p>
+
+      <div class="about-skills">
+        <span>Python</span>
+        <span>Angular</span>
+        <span>C# / .NET</span>
+        <span>Machine Learning</span>
+        <span>FastAPI</span>
+        <span>AWS</span>
+        <span>Azure</span>
+        <span>Docker</span>
+      </div>
+    </div>
+
+  </div>
+</section>
