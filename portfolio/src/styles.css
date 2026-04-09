@@ -88,3 +88,9 @@ body {
   width:65px;
   height:65px;
 }
+
+.nav-logo {
+  width: 52px;
+  height: 52px;
+  border-radius: 6px;
+}
