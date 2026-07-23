@@ -5,6 +5,8 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
 import { RouterModule } from '@angular/router';
 
+declare let gtag: Function;
+
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -44,6 +46,10 @@ export class HomeComponent {
     .subscribe(() => {
       alert("Email enviado com sucesso!");
       this.fecharModal();
+    });
+
+    gtag('event', 'conversion', {
+      'send_to': 'AW-18320040291/yOKhCKizhdUcEOPC1p9E'
     });
 
   }
