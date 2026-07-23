@@ -1,25 +1,17 @@
 import os
 import re
-import smtplib
 from flask import Flask, jsonify, request
 from flask_cors import CORS
 from flasgger import Swagger
-from email.mime.text import MIMEText
 from dotenv import load_dotenv
-
+import resend
 load_dotenv()
-
-EMAIL_USER = os.getenv("EMAIL_USER")
-EMAIL_PASSWORD = os.getenv("EMAIL_PASSWORD")
+RESEND_API_KEY = os.getenv("RESEND_API_KEY")
 EMAIL_TO = os.getenv("EMAIL_TO")
-SMTP_SERVER = os.getenv("SMTP_SERVER")
-SMTP_PORT = int(os.getenv("SMTP_PORT", 465))
-
-required_envs = ["EMAIL_USER", "EMAIL_PASSWORD", "EMAIL_TO", "SMTP_SERVER"]
-
-for var in required_envs:
-    if not os.getenv(var):
-        raise ValueError(f"Variável de ambiente não definida: {var}")
+EMAIL_FROM = os.getenv("EMAIL_FROM")
+if not RESEND_API_KEY or not EMAIL_TO or not EMAIL_FROM:
+    raise ValueError("Variáveis RESEND_API_KEY, EMAIL_TO ou EMAIL_FROM não definidas")
+resend.api_key = RESEND_API_KEY
 
 def create_app():
     app = Flask(__name__)
@@ -32,6 +24,13 @@ def create_app():
     }
 
     Swagger(app)
+
+    @app.route('/')
+    def root():
+        return jsonify({
+            "status": "online",
+            "message": "API programador-lucas funcionando"
+        })
 
     @app.route('/api')
     def home():
@@ -51,10 +50,8 @@ def create_app():
 
         if not all([nome, email, mensagem]):
             return jsonify({"erro": "Campos obrigatórios não preenchidos"}), 400
-
         if not re.match(r"[^@]+@[^@]+\.[^@]+", email):
             return jsonify({"erro": "Email inválido"}), 400
-
         corpo = f"""
 Novo contato pelo site
 
@@ -65,25 +62,29 @@ Mensagem:
 {mensagem}
 """
 
-        msg = MIMEText(corpo, "plain", "utf-8")
-        msg['Subject'] = 'Novo orçamento do site'
-        msg['From'] = EMAIL_USER
-        msg['To'] = EMAIL_TO
-        msg['Reply-To'] = email
-
         try:
-            servidor = smtplib.SMTP_SSL(SMTP_SERVER, SMTP_PORT, timeout=10)
-            servidor.login(EMAIL_USER, EMAIL_PASSWORD)
-            servidor.send_message(msg)
-            servidor.quit()
+            resend.Emails.send({
+                "from": f"Lucas Support <{EMAIL_FROM}>",
+                "to": EMAIL_TO,
+                "subject": "Novo contato do site",
+                "text": corpo,
+                "reply_to": f"{nome} <{email}>"
+            })
 
-            return jsonify({"status": "Email enviado com sucesso"})
+            return jsonify({
+                "status": "success",
+                "message": "Email enviado com sucesso"
+            })
 
         except Exception as e:
             print(f"Erro ao enviar email: {e}")
-            return jsonify({"erro": "Erro ao enviar email"}), 500
+            return jsonify({
+                "erro": "Falha ao enviar email",
+                "detalhes": str(e)
+            }), 500
 
     return app
+
 
 app = create_app()
 
