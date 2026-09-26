@@ -23,35 +23,9 @@ export class HomeComponent {
   email = "";
   mensagem = "";
   env = environment;
-
-  modalAberto: boolean = false;
-
-  abrirModal() {
-    this.modalAberto = true;
-  }
-
-  fecharModal() {
-    this.modalAberto = false;
-  }
-
-  enviarEmail() {
-
-    const dados = {
-      nome: this.nome,
-      email: this.email,
-      mensagem: this.mensagem
-    };
-
-    this.http.post(`${environment.apiUrl}/enviar-email`, dados)
-    .subscribe(() => {
-      alert("Email enviado com sucesso!");
-      this.fecharModal();
-    });
-
-    gtag('event', 'conversion', {
-      'send_to': 'AW-18320040291/yOKhCKizhdUcEOPC1p9E'
-    });
-
+  
+  abrirWhatsAppOrcamento(){
+    window.open(environment.whatsappOrcamento, '_blank');
   }
 
   abrirLink(url: string) {

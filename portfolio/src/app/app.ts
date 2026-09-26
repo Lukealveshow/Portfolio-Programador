@@ -34,7 +34,10 @@ export class App {
       });
 
   }
-
+  abrirWhatsAppOrcamento(){
+    window.open(environment.whatsappOrcamento, '_blank');
+  }
+  
   abrirWhatsApp() {
     window.open(environment.whatsapp, '_blank');
   }
