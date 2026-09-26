@@ -15,7 +15,7 @@
       e automação de processos.
     </p>
 
-    <button class="btn-primary" (click)="abrirModal()">
+    <button class="btn-primary" (click)="abrirWhatsAppOrcamento()">
       Solicitar Orçamento
     </button>
 
@@ -132,46 +132,3 @@
 </section>
 
 
-<!-- MODAL -->
-<div class="modal-overlay" *ngIf="modalAberto">
-
-  <div class="modal">
-
-    <button class="fechar" (click)="fecharModal()">✕</button>
-
-    <h2>Solicitar Orçamento</h2>
-
-    <form (ngSubmit)="enviarEmail()">
-
-      <input
-        type="text"
-        placeholder="Seu nome"
-        [(ngModel)]="nome"
-        name="nome"
-        required
-      >
-
-      <input
-        type="email"
-        placeholder="Seu email"
-        [(ngModel)]="email"
-        name="email"
-        required
-      >
-
-      <textarea
-        placeholder="Descreva seu projeto"
-        [(ngModel)]="mensagem"
-        name="mensagem"
-        required
-      ></textarea>
-
-      <button class="btn-primary">
-        Enviar
-      </button>
-
-    </form>
-
-  </div>
-
-</div>

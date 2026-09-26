@@ -11,5 +11,6 @@ export const environment = {
     fraud: 'https://github.com/Lukealveshow/Fraud-Detection-Machine-Learning'
   },
 
-  whatsapp: 'https://wa.me/5527992245822?text=Olá,%20vi%20seu%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20seus%20serviços.'
+  whatsapp: 'https://wa.me/5527992245822?text=Olá,%20vi%20seu%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20seus%20serviços.',
+  whatsappOrcamento: 'https://wa.me/5527992245822?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20or%C3%A7amento.'
 };
